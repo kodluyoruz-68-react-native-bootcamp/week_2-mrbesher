@@ -1,5 +1,5 @@
 import React, {useState, setState} from 'react';
-import {SafeAreaView, View, Text, StyleSheet, FlatList} from 'react-native';
+import {SafeAreaView, View, Text, StyleSheet, FlatList, Keyboard} from 'react-native';
 import {EmptyList, NoteBox, Note} from './components';
 
 /**
@@ -21,7 +21,7 @@ function App() {
   function addTodo(item) {
     setNoteList([...noteList, item]);
     incCount();
-    console.log('setting...');
+    Keyboard.dismiss();
   }
   function decCount() {
     setCount(count - 1);
